@@ -28,6 +28,8 @@
 4. 检查是否安装成功<br>
    import tensorflow as tf<br>
    print(tf.config.list_physical_devices('GPU'))
+5. 如果遇到缺少各种dll的情况，去CUDA的bin路径下寻找，如：C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\bin，<br>
+   然后把它们复制到C:\Windows\System32目录下即可
 
 # 4、CUDA
 
@@ -43,9 +45,31 @@
 
 # 6、安装常用的包
 
+## 分开来安装
+
 1. conda install numpy
 2. conda install pandas
 3. conda install scipy
 4. conda install statsmodels
 5. conda install matplotlib
 6. conda install scikit-learn
+
+## 一次性安装多个包
+
+这是一个操作的例子：
+
+1. 定义一个txt文件，里面是要安装的包名，如：
+   requirements_conda.txt
+   ```
+   numpy
+   pandas
+   scipy
+   statsmodels
+   matplotlib
+   scikit-learn
+   ```
+   注意：
+    * 一行一个
+    * 可以这样指定具体的版本： numpy==1.19.4
+2. 激活目标虚拟环境后，cd到txt文件所在目录，如：cd C:\Users\TRXCX\Downloads
+3. 执行conda install --file=requirements_conda.txt即可
