@@ -7,6 +7,9 @@
     * conda create -n TensorFlow2.10 python=3.10
 3. 激活虚拟环境：conda activate your_env_name
 4. 删除虚拟环境：conda remove -n your_env_name --all
+5. 新建环境没有在Anaconda安装目录下的envs,而是在User目录下。
+   这是因为把Anaconda安装在C盘下而运行Anaconda Powershell Prompt时没有使用管理员权限，因此就没能写入到Anaconda安装目录下的envs————没有权限。
+   解决方法就是使用管理员身份运行Anaconda Powershell Prompt。
 
 # 2、PyTorch2.0
 
